@@ -33,7 +33,7 @@ def get_value_by_key_fromJson(jsonObj, key):
         return _jsonObj;
     else:
         get_value_by_key = _jsonObj[key];
-        return get_value_by_key;
+        return json.dumps(get_value_by_key);
 
 ######################################
 # 2022-04-12 - Steven Chiu
@@ -49,6 +49,7 @@ def nmap_port_scanner(target_host, port_scanner_arguments, search_key):
     # default = "all"
     get_item_by_key = get_value_by_key_fromJson(load_jsonObj, search_key);
     print(get_item_by_key);
+    print(type(get_item_by_key));
     
     
 if __name__ == '__main__':
