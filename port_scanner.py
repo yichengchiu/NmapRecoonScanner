@@ -5,14 +5,23 @@ from plistlib import load
 import nmap
 import json
 from sys import argv
+import argparse
 
-if len(argv) >=4:
-    nmap_target_host                    = argv[1]
-    nmap_port_scanner_arguments         = argv[2]
-    nmap_port_scanner_result_search_key = argv[3]
-else:
-    print('參數錯誤，正確參數為：python3 port_scanner.py [nmap_target_host][nmap_port_scanner_arguments][nmap_port_scanner_result_search_key]')
-    quit()
+######################################
+# 2022-04-16 - Steven Chiu
+# ArgumentParser
+######################################
+
+# Initialize parser
+parser = argparse.ArgumentParser()
+
+# Adding optional argument
+parser.add_argument('--host', type=str, default="")
+parser.add_argument('--nmaparg', type=str, default="")
+parser.add_argument('--searchKey', type=str, default="")
+
+# Read arguments from cmd
+args = parser.parse_args()
 
 ######################################
 # 2022-04-12 - Steven Chiu
@@ -30,7 +39,7 @@ def get_value_by_key_fromJson(jsonObj, key):
     _jsonObj = json.loads(jsonObj);
     
     if key == "all":
-        return _jsonObj;
+        return json.dumps(_jsonObj);
     else:
         get_value_by_key = _jsonObj[key];
         return json.dumps(get_value_by_key);
@@ -49,8 +58,8 @@ def nmap_port_scanner(target_host, port_scanner_arguments, search_key):
     # default = "all"
     get_item_by_key = get_value_by_key_fromJson(load_jsonObj, search_key);
     print(get_item_by_key);
-    print(type(get_item_by_key));
-    
+
     
 if __name__ == '__main__':
-    nmap_port_scanner(nmap_target_host, nmap_port_scanner_arguments, nmap_port_scanner_result_search_key);
+    # 2022-4-16 - Steven Chiu - change parameter to match ArgumentParser
+    nmap_port_scanner(args.host, args.nmaparg, args.searchKey);
