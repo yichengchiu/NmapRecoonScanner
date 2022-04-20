@@ -17,14 +17,14 @@ python3 port_scanner.py --host [target_host] --nmaparg [nmap_cmd_parameters] --s
 
 ### Example CMD : 
 ```
-python port_scanner.py '192.168.13.134' '-T4 -sT' 'all'
+python port_scanner.py '127.0.0.1' '-T4 -sT' 'all'
 ```
 
 ### Scan Result Sample:
 ```
 {
   "nmap": {
-    "command_line": "nmap -oX - -T4 -sT 192.168.13.133",
+    "command_line": "nmap -oX - -T4 -sT 127.0.0.1",
     "scaninfo": {
       "tcp": {
         "method": "connect",
@@ -48,7 +48,7 @@ python port_scanner.py '192.168.13.134' '-T4 -sT' 'all'
         }
       ],
       "addresses": {
-        "ipv4": "192.168.13.133"
+        "ipv4": "127.0.0.1"
       },
       "vendor": {},
       "status": {
