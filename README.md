@@ -5,8 +5,25 @@ Tools for Red Team Recon
 ```
 pip install -r requirements.txt
 ```
+## Host Scanner
+### How to Execute this tool ?
+```
+python3 host_scanner.py --net [target_net]
+```
+target_net : One target net (ex : 192.168.XX.0/24)
 
-## How to Execute this tool ?
+#### Example CMD : 
+```
+python host_scanner.py --net '192.168.13.0/24'
+```
+### host Scan Result Sample:
+```
+["192.168.13.0", "192.168.13.1", "192.168.13.2", "192.168.13.3", "192.168.13.4", "192.168.13.5", "192.168.13.6", "192.168.13.7", "192.168.13.8", "192.168.13.9", "192.168.13.10", "192.168.13.11", "192.168.13.12", "192.168.13.13", "192.168.13.14", "192.168.13.15", "192.168.13.16", "192.168.13.17", "192.168.13.18", "192.168.13.19", "192.168.13.20", "192.168.13.21", "192.168.13.22", "192.168.13.23", "192.168.13.24", "192.168.13.168.13.234", "192.168.13.235", "192.168.13.236", "192.168.13.237", "192.168.13.238", "192.168.13.239", "192.168.13.240", "192.168.13.241", "192.168.13.242", "192.168.13.243", "192.168.13.244", "192.168.13.245", "192.168.13.246", "192.168.13.247"]
+```
+
+
+## Port Scanner
+### How to Execute this tool ?
 ```
 python3 port_scanner.py --host [target_host] --nmaparg [nmap_cmd_parameters] --searchKey [json_key]
 ```
@@ -17,10 +34,10 @@ python3 port_scanner.py --host [target_host] --nmaparg [nmap_cmd_parameters] --s
 
 ### Example CMD : 
 ```
-python port_scanner.py '192.168.13.134' '-T4 -sT' 'all'
+python port_scanner.py --host '192.168.13.134' --nmaparg '-T4 -sT' --searchKey 'all'
 ```
 
-### Scan Result Sample:
+### Port Scan Result Sample:
 ```
 {
   "nmap": {
