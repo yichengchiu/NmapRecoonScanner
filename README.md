@@ -11,9 +11,9 @@ pip install -r requirements.txt
 python3 port_scanner.py --host [target_host] --nmaparg [nmap_cmd_parameters] --searchKey [json_key]
 ```
 
-+ nmap_target_host : One target Host (ex : 127.0.0.1)
-+ nmap_port_scanner_arguments : nmap port scanner arguments (ex : -T4 -sT)
-+ nmap_port_scanner_result_search_key : Scanner result search key, default "all" will print every thing :)
++ host : One target Host (ex : 127.0.0.1)
++ nmaparg : nmap port scanner arguments (ex : -T4 -sT)
++ searchKey : Scanner result search key, default "all" will print every thing :)
 
 ### Example CMD : 
 ```
