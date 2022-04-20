@@ -34,18 +34,13 @@ python3 port_scanner.py --host [target_host] --nmaparg [nmap_cmd_parameters] --s
 
 ### Example CMD : 
 ```
-<<<<<<< HEAD
-python port_scanner.py --host '192.168.13.134' --nmaparg '-T4 -sT' --searchKey 'all'
-=======
 python port_scanner.py '127.0.0.1' '-T4 -sT' 'all'
->>>>>>> fb73c63a4dcab69335896132740b62085973366a
 ```
 
 ### Port Scan Result Sample:
 ```
 {
   "nmap": {
-    "command_line": "nmap -oX - -T4 -sT 192.168.13.133",
     "command_line": "nmap -oX - -T4 -sT 127.0.0.1",
     "scaninfo": {
       "tcp": {
